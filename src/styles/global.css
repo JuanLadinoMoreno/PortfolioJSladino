@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+:root {
+    --color-primary: #101D32;
+    --color-secondary: rgba(22, 51, 98, 11%);
+  }
+  
+  .bg-primary {
+    background-color: var(--color-primary);
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary);
+    /* filter: blur(1px); */
+  }
