@@ -1,0 +1,54 @@
+---
+// import burrob from "../../assets/proyects/burrob.png";
+import DataComponent from "./DataComponent";
+---
+
+<div class="my-5">
+    <h3
+        class="text-5xl p-1 font-bold bg-clip-text text-transparent text-center bg-gradient-to-r from-[#37527B] to-[#8CB7F9]"
+    >
+        Proyectos
+    </h3>
+
+    <DataComponent
+        title="Sistema de gestión para negocios de comida rápida"
+        desc="Aplicación web que permite administrar usuarios, clientes, productos y sucursales, además de gestionar comandas con opción de mesa o para llevar. Incluye un sistema de tickets con envío por correo y un dashboard con reportes de ventas filtrables por sucursal, año y categoría. También permite exportar datos en Excel, ofreciendo una solución adaptable para pequeños negocios de comida."
+        link="https://burguerrobles.com.mx/"
+        images={[
+            "../src/assets/proyects/vent1.png",
+            "../src/assets/proyects/vent2.png",
+            "../src/assets/proyects/vent3.png",
+            "../src/assets/proyects/vent4.png",
+            "../src/assets/proyects/vent5.png",
+        ]}
+        flowReverse=""
+        client:load
+    />
+    <DataComponent
+        title="Landing Page Hamburguesería"
+        desc="Una página web diseñada para que los usuarios puedan ver el menú de productos, conocer más sobre el local, consultar información de contacto y comunicarse vía WhatsApp."
+        link="https://burguerrobles.com.mx/"
+        images={[
+            "../src/assets/proyects/burrob.png",
+            "../src/assets/proyects/burrob2.png",
+            "../src/assets/proyects/burrob3.png",
+        ]}
+        flowReverse="flex-row-reverse"
+        client:load
+    />
+
+    <DataComponent
+        title="Landing Page para Doctora"
+        desc="Una página web diseñada para presentar los servicios médicos, especialidades y horarios de atención de una doctora. Incluye información de contacto y una opción para agendar citas vía WhatsApp."
+        link="https://doctoralaurabravo.com.mx/"
+        images={[
+            "../src/assets/proyects/doc1.png",
+            "../src/assets/proyects/doc2.png",
+            "../src/assets/proyects/doc3.png",
+        ]}
+        flowReverse=""
+        client:load
+    />
+
+
+</div>

@@ -1,0 +1,77 @@
+---
+
+const { title, desc, link, img1, img2, img3, flowReverse } = Astro.props;
+
+---
+
+<div class=` flex justify-center items-center  w-[80vw] p-4 gap-3 ${flowReverse}` >
+    <div class="flex justify-center items-center flex-col w-1/2">
+        <h4 class="p-2 text-3xl">{title}</h4>
+        <p class="">
+           {desc}
+        </p>
+        <div>
+            <a href={link}>link</a>
+            <a href="">link</a>
+        </div>
+    </div>
+    <div
+        class="container flex justify-center items-center flex-col gap-y-2 my-8"
+    >
+        <img
+            id={img1.src}
+            src={img1.src}
+            alt="Imagen principal"
+            class="main-image h-[400px] transition-all"
+        />
+        <div class="flex justify-center items-center gap-x-2">
+            <img
+                src={img1.src}
+                alt="Miniatura 1"
+                class="thumbnail h-[80px] w-[80px] cursor-pointer"
+                data-image={img1.src}
+            />
+            <img
+                src={img2.src}
+                alt="Miniatura 2"
+                class="thumbnail h-[80px] w-[80px] cursor-pointer"
+                data-image={img2.src}
+            />
+            <img
+                src={img3.src}
+                alt="Miniatura 3"
+                class="thumbnail h-[80px] w-[80px] cursor-pointer"
+                data-image={img3.src}
+            />
+        </div>
+    </div>
+</div>
+
+<script>
+    // document.querySelectorAll('.thumbnail').forEach(img => {
+    //   img.addEventListener('mouseover', (event) => {
+    //     const target = event.currentTarget as HTMLImageElement;
+    //     document.getElementById('mainImage')!.src = target.dataset.image!;
+    //   });
+    // });
+
+    // function name() {
+
+    // document.querySelectorAll(".thumbnail").forEach((img) => {
+        
+    //     img.addEventListener("mouseover", (event) => {
+    //         const target = event.currentTarget as HTMLImageElement;
+    //         console.log(target);
+    //         const mainImage = document.getElementById(
+    //             "mainImage",
+    //         ) as HTMLImageElement; // 🔹 Forzamos el tipo
+
+    //         if (mainImage) {
+    //             mainImage.src = target.dataset.image!;
+    //         }
+    //     });
+    // });
+    
+    // }
+    // name()
+</script>
