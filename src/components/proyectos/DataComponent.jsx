@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function DataComponent({ title, desc, link, images, flowReverse }) {
+function DataComponent({ title, desc, link, images, flowReverse, stack }) {
     const [mainImage, setMainImage] = useState(images[0])
     return (
 
@@ -14,6 +14,18 @@ function DataComponent({ title, desc, link, images, flowReverse }) {
                     <p className="text-base tracking-wide font-light">
                         {desc}
                     </p>
+                    <div className='flex justify-start items-center w-full gap-2'>
+                        {
+                            stack.map((st , index) => (
+                                <img 
+                                key={index}
+                                src={`/img/tech/${st}.svg`} 
+                                alt="" 
+                                className='size-6' />
+
+                            ))
+                        }
+                    </div>
                     <div className=' flex justify-start  gap-3 w-full'>
 
                         <a href={link} target='_blank' className=" block hover:scale-125 hover:rotate-360 transition-transform duration-300 ease-in-out ">
@@ -40,9 +52,10 @@ function DataComponent({ title, desc, link, images, flowReverse }) {
                     <div className="flex justify-center items-center gap-x-2 flex-wrap">
 
                         {
-                            images.map((img) => (
+                            images.map((img, index) => (
 
                                 <img
+                                    key={index}
                                     src={img}
                                     alt="Miniatura 1"
                                     className="thumbnail h-[80px] w-[80px] cursor-pointer"

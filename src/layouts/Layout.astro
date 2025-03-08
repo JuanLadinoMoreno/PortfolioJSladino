@@ -11,6 +11,8 @@ import NavHeader from "../components/NavHeader.astro"
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Juan Simón Ladino Moreno - Software developer</title>
+
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	</head>
 	<body>
 	<NavHeader/>
@@ -36,3 +38,7 @@ import NavHeader from "../components/NavHeader.astro"
 		color: #FFF;
 	}
 </style>
+
+<script>
+	AOS.init();
+  </script>
