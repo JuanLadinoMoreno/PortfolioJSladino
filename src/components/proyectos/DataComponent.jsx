@@ -16,12 +16,12 @@ function DataComponent({ title, desc, link, images, flowReverse, stack }) {
                     </p>
                     <div className='flex justify-start items-center w-full gap-2'>
                         {
-                            stack.map((st , index) => (
-                                <img 
-                                key={index}
-                                src={`/img/tech/${st}.svg`} 
-                                alt="" 
-                                className='size-6' />
+                            stack.map((st, index) => (
+                                <img
+                                    key={index}
+                                    src={`/img/tech/${st}.svg`}
+                                    alt=""
+                                    className='size-6' />
 
                             ))
                         }
@@ -43,6 +43,8 @@ function DataComponent({ title, desc, link, images, flowReverse, stack }) {
                 {/* images */}
                 <div
                     className="container flex justify-center items-center flex-col gap-y-2 my-8"
+                    data-aos="fade-up"
+                    data-aos-duration="3000"
                 >
                     <img
                         src={mainImage}

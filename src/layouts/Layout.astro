@@ -1,7 +1,8 @@
 ---
 // import './src/styles/global.css'
-import '../styles/global.css'
-import NavHeader from "../components/NavHeader.astro"
+import "../styles/global.css";
+import NavHeader from "../components/NavHeader.astro";
+import AOSInit from "../components/AOSInit.jsx";
 ---
 <!doctype html>
 <html lang="es">
@@ -11,19 +12,17 @@ import NavHeader from "../components/NavHeader.astro"
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Juan Simón Ladino Moreno - Software developer</title>
-
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	</head>
 	<body>
-	<NavHeader/>
+		<NavHeader />
 		<slot />
+		<AOSInit client:only="react" />
 	</body>
 </html>
 
 <style>
-
-	html{
-		font-family: 'Montserrat', Helvetica, sans-serif;
+	html {
+		font-family: "Montserrat", Helvetica, sans-serif;
 	}
 
 	body {
@@ -34,11 +33,7 @@ import NavHeader from "../components/NavHeader.astro"
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		background: #101D32;
-		color: #FFF;
+		background: #101d32;
+		color: #fff;
 	}
 </style>
-
-<script>
-	AOS.init();
-  </script>
