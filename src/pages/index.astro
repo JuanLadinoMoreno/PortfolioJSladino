@@ -1,20 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Proyects from '../components/proyectos/Proyects.astro';
-import Tools from '../components/Tools.astro';
-import AboutMe from '../components/AboutMe.astro';
-import Footer from '../components/Footer.astro';
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Proyects from "../components/proyectos/Proyects.astro";
+import Tools from "../components/Tools.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Footer from "../components/Footer.astro";
+// import FormContact from '../components/FormContact.astro';
+// import FormContact from '../components/FormContact.tsx';
+import FormContact from "../components/FormContact.jsx";
+
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT;
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Header/>
-	<Proyects/>
-	<Tools/>
-	<AboutMe/>
-	<Footer/>
+	<Header />
+	<Proyects />
+	<Tools />
+	<AboutMe />
+	<FormContact FORMSPREE_ENDPOINT={FORMSPREE_ENDPOINT} client:only="react" />
+	<Footer />
 </Layout>
