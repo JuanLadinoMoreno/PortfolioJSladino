@@ -7,9 +7,13 @@ const FormContact = ({ FORMSPREE_ENDPOINT }) => {
     const formRef = useRef(null); // 👈 Sin tipos de TypeScript
 
     const handleSubmit = async (e) => {
-        console.log(e.currentTarget);
         
         e.preventDefault(); // 👈 Evita la recarga de la página
+        console.log(e.target[0].value.trim());
+        if (e.target[0].value.trim() === '' || e.target[1].value.trim() === '' || e.target[2].value.trim() === '' ) {
+            await Swal.fire("Error", "Verifique que los campos estén llenos corectamente", "error");
+            return
+        }
         setNoAbailable('pointer-events-none')
 
         const formData = new FormData(e.currentTarget);
@@ -38,7 +42,7 @@ const FormContact = ({ FORMSPREE_ENDPOINT }) => {
     };
 
     return (
-        <div className="my-6 mx-10" >
+        <div className="my-6 mx-10" id="contact">
             <h3
                 className="text-5xl p-1 font-bold bg-clip-text text-transparent text-center bg-gradient-to-r from-[#37527B] to-[#8CB7F9]"
             >
