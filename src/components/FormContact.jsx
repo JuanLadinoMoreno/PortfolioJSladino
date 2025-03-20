@@ -9,7 +9,6 @@ const FormContact = ({ FORMSPREE_ENDPOINT }) => {
     const handleSubmit = async (e) => {
         
         e.preventDefault(); // 👈 Evita la recarga de la página
-        console.log(e.target[0].value.trim());
         if (e.target[0].value.trim() === '' || e.target[1].value.trim() === '' || e.target[2].value.trim() === '' ) {
             await Swal.fire("Error", "Verifique que los campos estén llenos corectamente", "error");
             return
