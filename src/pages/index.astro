@@ -8,6 +8,7 @@ import Footer from "../components/Footer.astro";
 // import FormContact from '../components/FormContact.astro';
 // import FormContact from '../components/FormContact.tsx';
 import FormContact from "../components/FormContact.jsx";
+import Completo from "../components/Completo.jsx";
 
 const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT;
 
@@ -21,5 +22,6 @@ const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT;
 	<Tools />
 	<AboutMe />
 	<FormContact FORMSPREE_ENDPOINT={FORMSPREE_ENDPOINT} client:only="react" />
-	<Footer />
+	<Footer /> 
+	<!-- <Completo client:only="react"/> -->
 </Layout>
