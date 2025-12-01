@@ -3,21 +3,157 @@
 ---
 
 <!-- <nav  class=" flex justify-between items-center w-[80vw] max-w-screen p-3  mt-4 rounded-2xl bg-sky-900/10 border-t-2 border-sky-100/50"> -->
-<nav
-    class="flex justify-between items-center w-[80vw] max-w-screen p-3 mt-4 rounded-2xl bg-secondary backdrop-blur-sm border-t-2 border-sky-100/50 z-50 fixed top-0"
-    data-aos="zoom-out-down"
->
-    <!-- <p class="px-2">JSladino</p> -->
+<div class="fixed top-0 z-50 left-0 right-0 md:left-auto md:right-auto">
+  <nav
+    class="flex justify-between items-center w-fit md:w-[80vw] p-4 mt-4 rounded-2xl bg-secondary backdrop-blur-sm border-t-2 border-sky-100/50 ml-auto mr-4 md:mr-auto md:ml-auto md:relative md:left-1/2 md:transform md:-translate-x-1/2"
+  >
+    <!-- Logo -->
     <img
-        src="/img/logo.svg"
-        alt=""
-        class="h-10 scale-150 mx-5 duration-500 hover:scale-200 hover:rotate-90 transition hidden sm:inline"
+      src="/img/logo.svg"
+      alt="Logo"
+      class="h-8 scale-125 mx-2 duration-300 hover:scale-150 hover:rotate-12 transition hidden md:block"
     />
-    <div class="flex justify-between items-center gap-x-4 z-40 py-2">
-        <a href="#home" class="hover:border-b hover:b-cyan-700">Inicio</a>
-        <a href="#proyects" class="hover:border-b hover:b-cyan-700">Proyectos</a>
-        <a href="#techs" class="hover:border-b hover:b-cyan-700">Tecnologías</a>
-        <a href="#aboutme" class="hover:border-b hover:b-cyan-700">Sobre mi</a>
-        <a href="#contact" class="hover:border-b hover:b-cyan-700">Contacto</a>
+    <!-- <span class="text-xl font-bold sm:hidden">JS</span> -->
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex justify-between items-center gap-x-4 z-40 py-2">
+      <a
+        href="#home"
+        class="hover:border-b hover:b-cyan-700 pb-1 transition-colors">Inicio</a
+      >
+      <a
+        href="#proyects"
+        class="hover:border-b hover:b-cyan-700 pb-1 transition-colors"
+        >Proyectos</a
+      >
+      <a
+        href="#techs"
+        class="hover:border-b hover:b-cyan-700 pb-1 transition-colors"
+        >Tecnologías</a
+      >
+      <a
+        href="#aboutme"
+        class="hover:border-b hover:b-cyan-700 pb-1 transition-colors"
+        >Sobre mi</a
+      >
+      <a
+        href="#contact"
+        class="hover:border-b hover:b-cyan-700 pb-1 transition-colors"
+        >Contacto</a
+      >
     </div>
-</nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuToggle" class="md:hidden flex items-center p-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobileMenu"
+    class="fixed inset-0 z-40 hidden md:hidden bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-30"
+  >
+    <div
+      class="absolute right-0 top-0 h-full w-64 p-6 transform translate-x-full transition-transform duration-300 bg-gradient-to-r from-[#37527B] to-[#031d44] rounded-md border border-gray-100"
+    >
+      <img
+        src="/img/logo.svg"
+        alt="Logo"
+        class="h-8 scale-125 mx-2 duration-300 hover:scale-150 hover:rotate-12 transition"
+      />
+      <button id="closeMenu" class="absolute top-4 right-4 p-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="flex flex-col gap-y-6 mt-12">
+        <a href="#home" class="text-xl hover:text-cyan-400 transition-colors"
+          >Inicio</a
+        >
+        <a
+          href="#proyects"
+          class="text-xl hover:text-cyan-400 transition-colors">Proyectos</a
+        >
+        <a href="#techs" class="text-xl hover:text-cyan-400 transition-colors"
+          >Tecnologías</a
+        >
+        <a href="#aboutme" class="text-xl hover:text-cyan-400 transition-colors"
+          >Sobre mi</a
+        >
+        <a href="#contact" class="text-xl hover:text-cyan-400 transition-colors"
+          >Contacto</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const closeMenu = document.getElementById("closeMenu");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileMenuContent = mobileMenu?.querySelector("div");
+
+  if (!menuToggle || !closeMenu || !mobileMenu || !mobileMenuContent) {
+    console.error("Menu elements not found");
+    throw new Error("Menu elements not found");
+  }
+
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.remove("hidden");
+    setTimeout(() => {
+      mobileMenuContent.classList.remove("translate-x-full");
+    }, 10);
+  });
+
+  closeMenu.addEventListener("click", () => {
+    mobileMenuContent.classList.add("translate-x-full");
+    setTimeout(() => {
+      mobileMenu.classList.add("hidden");
+    }, 300);
+  });
+
+  // Close menu when clicking on a link
+  const menuLinks = mobileMenu.querySelectorAll("a");
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenuContent.classList.add("translate-x-full");
+      setTimeout(() => {
+        mobileMenu.classList.add("hidden");
+      }, 300);
+    });
+  });
+
+  // Close menu when clicking outside
+  mobileMenu.addEventListener("click", (e) => {
+    if (e.target === mobileMenu) {
+      mobileMenuContent.classList.add("translate-x-full");
+      setTimeout(() => {
+        mobileMenu.classList.add("hidden");
+      }, 300);
+    }
+  });
+</script>

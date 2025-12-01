@@ -13,3 +13,10 @@
     background-color: var(--color-secondary);
     /* filter: blur(1px); */
   }
+
+  .imgMasked {
+        mask-image: linear-gradient(
+            black 75%,
+            transparent
+        );
+    }
