@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 
-function DataComponent({ title, desc, link, linkRepo, images, flowReverse, stack }) {
-    const [mainImage, setMainImage] = useState(images[0])
+function DataComponent({ title, desc, link, linkRepo, images, flowReverse, stack, videoId }) {
+    const [mainImage, setMainImage] = useState(images?.[0])
+    const isVideo = videoId ? true : false
+    const hasImages = images && images.length > 0
+
     return (
 
         <>
@@ -40,34 +43,49 @@ function DataComponent({ title, desc, link, linkRepo, images, flowReverse, stack
 
                     </div>
                 </div>
-                {/* images */}
+                {/* media */}
                 <div
                     className="container flex justify-center items-center flex-col gap-y-2 my-8"
                     data-aos="fade-up"
                     data-aos-duration="3000"
                 >
-                    <img
-                        src={mainImage}
-                        alt="Imagen principal"
-                        className="main-image w-lg min-w-sm"
-                    />
-                    <div className="flex justify-center items-center gap-x-2 flex-wrap">
+                    {isVideo ? (
+                        <iframe
+                            width="100%"
+                            height="400"
+                            src={`https://www.youtube.com/embed/${videoId}`}
+                            title={title}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="w-lg min-w-sm rounded-lg"
+                        ></iframe>
+                    ) : hasImages ? (
+                        <>
+                            <img
+                                src={mainImage}
+                                alt="Imagen principal"
+                                className="main-image w-lg min-w-sm"
+                            />
+                            <div className="flex justify-center items-center gap-x-2 flex-wrap">
 
-                        {
-                            images.map((img, index) => (
+                                {
+                                    images.map((img, index) => (
 
-                                <img
-                                    key={index}
-                                    src={img}
-                                    alt="Miniatura 1"
-                                    className="thumbnail h-[80px] w-[80px] cursor-pointer"
-                                    onMouseOver={() => setMainImage(img)}
-                                />
-                            ))
-                        }
+                                        <img
+                                            key={index}
+                                            src={img}
+                                            alt="Miniatura 1"
+                                            className="thumbnail h-[80px] w-[80px] cursor-pointer"
+                                            onMouseOver={() => setMainImage(img)}
+                                        />
+                                    ))
+                                }
 
 
-                    </div>
+                            </div>
+                        </>
+                    ) : null}
                 </div>
             </div>
 
