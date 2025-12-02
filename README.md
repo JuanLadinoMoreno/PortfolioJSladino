@@ -122,10 +122,9 @@ npm run build
 
 ## 📞 Contacto
 
-- **Email**: tu-email@ejemplo.com
+- **Email**: juanladinomoreno@gmail.com
 - **GitHub**: https://github.com/JuanLadinoMoreno
-- **LinkedIn**: tu-perfil-linkedin
-- **WhatsApp**: +XX XXX XXXX XXXX
+- **LinkedIn**: https://www.linkedin.com/in/juansim%C3%B3nladino/
 
 ## 📄 Licencia
 
