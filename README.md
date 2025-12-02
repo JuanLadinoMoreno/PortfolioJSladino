@@ -1,48 +1,144 @@
-# Astro Starter Kit: Basics
+# 💼 Juan Ladino - Portfolio Web
 
-```sh
-npm create astro@latest -- --template basics
-```
+Portafolio web profesional construido con **Astro**, showcaseando proyectos, habilidades y experiencia como desarrollador full stack.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🌐 Características
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- ✨ **Diseño moderno y responsive** - Se adapta perfectamente a todos los dispositivos
+- 🚀 **Rendimiento optimizado** - Astro para máxima velocidad y SEO
+- 🎨 **Interfaz intuitiva** - Navegación fluida con menú responsive
+- 📱 **Mobile-first** - Experiencia de usuario superior en cualquier pantalla
+- 🎬 **Integración de videos** - Showcase de proyectos con demostraciones en YouTube
+- 💻 **Stack moderno** - React, Tailwind CSS, JavaScript
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📂 Estructura del Proyecto
 
 ```text
 /
-├── public/
-│   └── favicon.svg
 ├── src/
+│   ├── components/
+│   │   ├── Header.astro
+│   │   ├── NavHeader.astro
+│   │   ├── proyectos/
+│   │   │   ├── Proyects.astro
+│   │   │   └── DataComponent.jsx
+│   │   ├── About.astro
+│   │   ├── Contact.astro
+│   │   └── ...
 │   ├── layouts/
 │   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── pages/
+│   │   └── index.astro
+│   └── assets/
+│       ├── proyects/
+│       └── tech/
+├── public/
+│   ├── img/
+│   │   ├── proyects/
+│   │   └── tech/
+├── astro.config.mjs
+├── tailwind.config.mjs
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🚀 Primeros Pasos
 
-## 🧞 Commands
+### Requisitos
+- Node.js 18+
+- npm o yarn
 
-All commands are run from the root of the project, from a terminal:
+### Instalación
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+# Clonar el repositorio
+git clone https://github.com/JuanLadinoMoreno/PortfolioWebAstro.git
 
-## 👀 Want to learn more?
+# Instalar dependencias
+cd PortfolioWebAstro
+npm install
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 🧞 Comandos
+
+| Comando | Acción |
+|---------|--------|
+| `npm run dev` | Inicia el servidor local en `localhost:4321` |
+| `npm run build` | Construye el sitio para producción en `./dist/` |
+| `npm run preview` | Vista previa de la build de producción |
+| `npm run astro` | Acceso directo a comandos de Astro CLI |
+
+## 🛠️ Tecnologías Utilizadas
+
+### Frontend
+- **Astro** - Framework web moderno
+- **React** - Componentes interactivos
+- **Tailwind CSS** - Estilos responsivos
+- **JavaScript/TypeScript** - Lógica dinámica
+
+### Herramientas
+- **Vite** - Build tool ultra-rápido
+- **npm** - Gestor de paquetes
+
+## 📋 Secciones del Portfolio
+
+- **Inicio** - Introducción y llamada a la acción
+- **Proyectos** - Galería de proyectos con videos y screenshots
+- **Tecnologías** - Stack tecnológico y habilidades
+- **Sobre mí** - Información personal y experiencia
+- **Contacto** - Formulario y enlaces de contacto
+
+## 🎯 Proyectos Destacados
+
+### MCP Server - Data Processor
+Servidor MCP especializado en procesamiento de datos en tiempo real, integrado con Claude para análisis y exportación de datos.
+
+### Sistema de Gestión para Negocios de Comida
+Plataforma full stack con autenticación JWT, sistema de roles, gestión de productos, pedidos y reportes.
+
+### Sitio Web de Hamburguesería
+Sitio web comercial con menú de productos, información de contacto y integración con WhatsApp.
+
+### Landing Page para Doctora
+Página profesional para presentar servicios médicos y agendar citas.
+
+## 📱 Responsive Design
+
+El portfolio está completamente optimizado para:
+- 📱 Mobile (320px+)
+- 📱 Tablet (768px+)
+- 💻 Desktop (1024px+)
+
+## 🚀 Despliegue
+
+El sitio está optimizado para despliegue en:
+- **Vercel**
+- **Render**
+- **Railway**
+
+```bash
+npm run build
+# El contenido construido estará en ./dist/
+```
+
+## 📞 Contacto
+
+- **Email**: tu-email@ejemplo.com
+- **GitHub**: https://github.com/JuanLadinoMoreno
+- **LinkedIn**: tu-perfil-linkedin
+- **WhatsApp**: +XX XXX XXXX XXXX
+
+## 📄 Licencia
+
+Este proyecto es de código abierto bajo la licencia MIT.
+
+## 📚 Recursos Útiles
+
+- [Documentación de Astro](https://docs.astro.build)
+- [Tailwind CSS](https://tailwindcss.com)
+- [React Documentation](https://react.dev)
+
+---
+
+⭐ Si este portfolio te resulta útil, considera darle una estrella en GitHub.
+
+**Hecho con ❤️ por Juan Ladino**
