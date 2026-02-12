@@ -1,3 +1,4 @@
+import { div } from 'framer-motion/client'
 import React, { useState } from 'react'
 
 function DataComponent({ title, desc, link, linkRepo, images, flowReverse, stack, videoId }) {
@@ -50,7 +51,9 @@ function DataComponent({ title, desc, link, linkRepo, images, flowReverse, stack
                     data-aos-duration="3000"
                 >
                     {isVideo ? (
-                        <iframe
+                        <div className="flex justify-center items-center shadow-[0_0_40px_rgba(140,183,249,0.9)] rounded-lg">
+                            {/* <div className='absolute -z-10 top-0 left-0 w-full h-full inset-0 shadow-2xl shadow-blue-300'></div> */}
+                            <iframe
                             width="100%"
                             height="400"
                             src={`https://www.youtube.com/embed/${videoId}`}
@@ -60,6 +63,8 @@ function DataComponent({ title, desc, link, linkRepo, images, flowReverse, stack
                             allowFullScreen
                             className="w-lg min-w-sm rounded-lg"
                         ></iframe>
+                        </div>
+                        
                     ) : hasImages ? (
                         <>
                             <img
